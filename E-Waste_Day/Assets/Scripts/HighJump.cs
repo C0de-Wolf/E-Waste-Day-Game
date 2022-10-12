@@ -22,7 +22,7 @@ public class HighJump : MonoBehaviour
             rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse); 
             StartCoroutine(Wait()); 
             nextUseTime = Time.time + CDTime;   
-            CreateDust();
+            DustCreate();
         }
     }
     }
@@ -36,7 +36,7 @@ public class HighJump : MonoBehaviour
       
         
     }
-    void CreateDust()
+    void DustCreate()
     {
         Debug.Log("kek");
         jdust.Play();
