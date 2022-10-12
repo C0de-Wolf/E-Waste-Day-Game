@@ -8,17 +8,24 @@ public class MovingPlatform : MonoBehaviour
 	private const float fTime = 0.5f;
 	private const float fDist = 4.0f;
 	public GameObject Player;
+	public bool move = true;
 
-	private float origX;
-    void Start()
+	public float origX;
+	public float origTime;
+    public void Start()
     {
         origX = gameObject.transform.position.x;
+		origTime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float delta = Mathf.Abs(((fTime * Time.time) % 2.0f) - 1.0f) - 0.5f;
+		if (!move) return;
+        float delta = Mathf.Abs(Mathf.Repeat(fTime * (Time.time - origTime) - 0.5f, 2.0f) - 1.0f) - 0.5f;
+		// Debug.Log("a");
+		// Debug.Log(delta);
+		// Debug.Log(Mathf.Repeat((fTime * (Time.time - origTime) - 0.5f), 2.0f));
 		gameObject.transform.position = new Vector3(origX + fDist * delta, gameObject.transform.position.y, gameObject.transform.position.z);
     }
 
