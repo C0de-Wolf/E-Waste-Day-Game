@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Player_Collect : MonoBehaviour
 {
     public Text fragmentText;
-    private int a = 1;
+    public int a = 0;
     void Start()
     {
         fragmentText.text = "0/2 ---";
@@ -20,8 +20,8 @@ public class Player_Collect : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
          if(col.gameObject.tag == "FanFragment"){
-                fragmentText.text = $"{a}/2 ---";
                 a++;
+                fragmentText.text = $"{a}/2 ---";
                 Destroy(col.gameObject);
         }
     }

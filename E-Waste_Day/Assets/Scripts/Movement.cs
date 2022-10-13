@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
 using UnityEngine.SceneManagement;
+
 public class Movement : MonoBehaviour
 {
 	    public float speed;
@@ -17,7 +18,8 @@ public class Movement : MonoBehaviour
 
 		private bool jumpBoostAvailable;
 		
-		public Dash dashs;  
+		public Dash dashs;
+		public Player_Collect playerCollect;
 	
 	
 	
@@ -67,6 +69,14 @@ public class Movement : MonoBehaviour
 		void OnCollisionExit2D(Collision2D col) {
 			if (col.collider.tag == "JumpBoostPlat") {
 				jumpBoostAvailable = false;
+			}
+		}
+
+		void OnTriggerStay2D(Collider2D col) {
+			if (col.tag == "Door") {
+				if (Input.GetKeyDown(KeyCode.E)) {
+					SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+				}
 			}
 		}
     
