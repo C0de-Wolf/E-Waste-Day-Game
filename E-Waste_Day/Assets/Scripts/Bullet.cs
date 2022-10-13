@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private Rigidbody2D rb; 
+	public GameObject Player;
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -20,8 +21,9 @@ public class Bullet : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         if(col.gameObject.tag == "Player"){
-            //Effect ekle  
-            //Öldür 
+            //Effect ekle
+            //Öldür
+			Player.GetComponent<Death>().respawn();
             Destroy(this.gameObject);
         }else{
             Destroy(this.gameObject);
