@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class Dialogue : MonoBehaviour
+public class Dialogue1 : MonoBehaviour
 {
     public Text textDisplay;
     public string[] sentences;
