@@ -5,7 +5,6 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     public GameObject bulletpref;
-
     float nextShot;
     public float shotCD;
     void Start()
