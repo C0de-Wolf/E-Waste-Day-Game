@@ -5,7 +5,7 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     public GameObject bulletpref;
-	gameObject Player;
+
     float nextShot;
     public float shotCD;
     void Start()
@@ -20,7 +20,6 @@ public class Turret : MonoBehaviour
 
 
             GameObject bullet = Instantiate(bulletpref, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.identity);
-			bullet.SetComponent<Player>(Player);
 
 
             nextShot = Time.time + shotCD;

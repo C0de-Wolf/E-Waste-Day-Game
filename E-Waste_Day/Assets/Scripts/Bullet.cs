@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Bullet : MonoBehaviour
 {
     private Rigidbody2D rb; 
 	public GameObject Player;
+    private Scene scene;
     void Start()
     {
+        scene = SceneManager.GetActiveScene();
         rb = gameObject.GetComponent<Rigidbody2D>();
         
         rb.velocity = new Vector2(-10, 1f);
@@ -23,7 +25,8 @@ public class Bullet : MonoBehaviour
         if(col.gameObject.tag == "Player"){
             //Effect ekle
             //Öldür
-			Player.GetComponent<Death>().respawn();
+            SceneManager.LoadScene(scene.name);
+			
             Destroy(this.gameObject);
         }else{
             Destroy(this.gameObject);
