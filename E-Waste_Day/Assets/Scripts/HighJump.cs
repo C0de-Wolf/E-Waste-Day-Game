@@ -12,12 +12,13 @@ public class HighJump : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-     if (Time.time > nextUseTime){
+     if ( Time.time > nextUseTime){
         if(Input.GetKeyDown(KeyCode.Q)){
             rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse); 
             StartCoroutine(Wait()); 
