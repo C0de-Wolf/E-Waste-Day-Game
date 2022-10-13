@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fatal
   - FanFragment
+  - JumpBoostPlat
   layers:
   - Default
   - TransparentFX

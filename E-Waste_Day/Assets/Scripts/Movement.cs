@@ -14,6 +14,8 @@ public class Movement : MonoBehaviour
 		public Transform groundcheck;
 		public float checkRadius;
 		public LayerMask WhatisGround;
+
+		private bool jumpBoostAvailable;
 		
 		public Dash dashs;  
 	
@@ -24,6 +26,7 @@ public class Movement : MonoBehaviour
 
         void Start(){
             rb = GetComponent<Rigidbody2D>();
+			jumpBoostAvailable = false;
 			
         }
 		void FixedUpdate() {
@@ -43,13 +46,28 @@ public class Movement : MonoBehaviour
 			if(isGrounded){
 				rb.gravityScale = 2;
 				if(Input.GetKeyDown(KeyCode.Space)){
-					rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse); 
+					if (jumpBoostAvailable) {
+						rb.AddForce(new Vector2(0, jumpForce*1.3f), ForceMode2D.Impulse); 
+					} else {
+						rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse); 
+					}
 
 				}
 				
 			}
 		
 		
+		}
+
+		void OnCollisionEnter2D(Collision2D col) {
+			if (col.collider.tag == "JumpBoostPlat") {
+				jumpBoostAvailable = true;
+			}
+		}
+		void OnCollisionExit2D(Collision2D col) {
+			if (col.collider.tag == "JumpBoostPlat") {
+				jumpBoostAvailable = false;
+			}
 		}
     
 

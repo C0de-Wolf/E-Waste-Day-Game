@@ -568,9 +568,10 @@ GameObject:
   - component: {fileID: 215875865}
   - component: {fileID: 215875864}
   - component: {fileID: 215875863}
+  - component: {fileID: 215875867}
   m_Layer: 3
   m_Name: Blatvorm (4)
-  m_TagString: Untagged
+  m_TagString: JumpBoostPlat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -696,6 +697,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!122 &215875867
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215875861}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4282485013
+  m_Size: 2
 --- !u!1 &304177569
 GameObject:
   m_ObjectHideFlags: 0
@@ -9643,9 +9656,10 @@ GameObject:
   - component: {fileID: 1896463281}
   - component: {fileID: 1896463280}
   - component: {fileID: 1896463279}
+  - component: {fileID: 1896463283}
   m_Layer: 3
   m_Name: Blatvorm (6)
-  m_TagString: Untagged
+  m_TagString: JumpBoostPlat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9771,6 +9785,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!122 &1896463283
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896463277}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4282485013
+  m_Size: 2
 --- !u!1 &1927151292
 GameObject:
   m_ObjectHideFlags: 0
