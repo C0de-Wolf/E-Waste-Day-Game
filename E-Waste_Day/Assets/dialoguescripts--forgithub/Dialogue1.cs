@@ -45,7 +45,7 @@ public class Dialogue1 : MonoBehaviour
             
             textDisplay.text = "";
             continuebutton.SetActive(false);
-            SceneManager.LoadScene("Level2");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         
     }

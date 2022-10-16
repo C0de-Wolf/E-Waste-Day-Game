@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour
 {
 	    public float speed;
-		
+		public GameObject e;
         public float jumpForce;
         private float moveInput;
 		public bool isGrounded;
@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
 		private bool jumpBoostAvailable;
 		
 		public Dash dashs;
-		public Player_Collect playerCollect;
+	
 	
 	
 	
@@ -27,6 +27,7 @@ public class Movement : MonoBehaviour
 
 
         void Start(){
+			e.SetActive(false);
             rb = GetComponent<Rigidbody2D>();
 			jumpBoostAvailable = false;
 			
@@ -74,10 +75,18 @@ public class Movement : MonoBehaviour
 
 		void OnTriggerStay2D(Collider2D col) {
 			if (col.tag == "Door") {
+				e.SetActive(true);
 				if (Input.GetKeyDown(KeyCode.E)) {
 					SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 				}
+			}else{
+				e.SetActive(false);
 			}
+		}
+
+		void OnTriggerExit2D(Collider2D other)
+		{
+			e.SetActive(false);
 		}
     
 
